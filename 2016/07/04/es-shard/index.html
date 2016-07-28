@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> ES Sharding 問題集 · CKPlus's Blog</title><meta name="description" content="ES Sharding 問題集 - Eric Yu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://ckplus.github.io/atom.xml" title="CKPlus's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/ckplus" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">ES Sharding 問題集</h1><div class="post-info">Jul 4, 2016</div><div class="post-content"><h1 id="Disk-based-Shard-Allocation"><a href="#Disk-based-Shard-Allocation" class="headerlink" title="Disk-based Shard Allocation"></a>Disk-based Shard Allocation</h1><hr>
+<p>上週公司的 ES cluster 炸裂，才發現一個有趣的問題。</p>
+<p>一度以為是 index 過多所以才掛 shard 緩慢，但我想錯了！</p>
+<p>就是當 ES Cluster 在分 shard 的時候，要是 data node 的 disk space 不夠會無法繼續分，</p>
+<p>造成 shard 掛不回去。</p>
+<p>以下兩個參數是控制關鍵。</p>
+<p><code>cluster.routing.allocation.disk.watermark.low</code></p>
+<p>控制 disk space 的低標。預設 85%，要是超過 85%，則不會再把 shard 分到這個 node 上。</p>
+<p><code>cluster.routing.allocation.disk.watermark.high</code></p>
+<p>控制 disk space 的高標。預設 90%，要是超過 90%，es 會嘗試把 shard 掛到其他 node 上。</p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html" target="_blank" rel="external">ES 官網參考文件</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/07/18/ssh-tunnel/" class="prev">PREV</a><a href="/2016/07/04/venv/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://ckplus.github.io">Eric Yu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script></body></html>
