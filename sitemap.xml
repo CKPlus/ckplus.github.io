@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ckplus.github.io/2016/08/02/custom-django-admin/</loc>
+    
+    <lastmod>2016-08-02T04:57:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ckplus.github.io/2016/07/04/es-shard/</loc>
     
     <lastmod>2016-07-28T05:55:41.000Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://ckplus.github.io/2016/07/18/ssh-tunnel/</loc>
+    <loc>http://ckplus.github.io/2016/07/04/venv/</loc>
     
     <lastmod>2016-07-28T05:55:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ckplus.github.io/2016/07/04/venv/</loc>
+    <loc>http://ckplus.github.io/2016/07/18/ssh-tunnel/</loc>
     
     <lastmod>2016-07-28T05:55:41.000Z</lastmod>
     
