@@ -1,4 +1,94 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Python 時間/時區處理 · CKPlus's Blog</title><meta name="description" content="Python 時間/時區處理 - Eric Yu"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://ckplus.github.io/atom.xml" title="CKPlus's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/ckplus" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Python 時間/時區處理</h1><div class="post-info">Aug 20, 2016</div><div class="post-content"><h1 id="Python-時間-時區處理筆記"><a href="#Python-時間-時區處理筆記" class="headerlink" title="Python 時間/時區處理筆記"></a>Python 時間/時區處理筆記</h1><p>很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩<br>乾脆直接寫在這，以後來這邊尻！</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Python 時間/時區處理 | CKPlus&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python 時間/時區處理筆記很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩乾脆直接寫在這，以後來這邊尻！
+取得 timestamp 與轉換123456789101112import timeimport datetime# 取得 timestampts = time.time()ts_str = datetime.strftime(&apos;%s&apos;)# 用 datet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 時間/時區處理">
+<meta property="og:url" content="http://ckplus.github.io/2016/08/20/python-timezone/index.html">
+<meta property="og:site_name" content="CKPlus's Blog">
+<meta property="og:description" content="Python 時間/時區處理筆記很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩乾脆直接寫在這，以後來這邊尻！
+取得 timestamp 與轉換123456789101112import timeimport datetime# 取得 timestampts = time.time()ts_str = datetime.strftime(&apos;%s&apos;)# 用 datet">
+<meta property="og:updated_time" content="2016-08-22T04:47:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 時間/時區處理">
+<meta name="twitter:description" content="Python 時間/時區處理筆記很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩乾脆直接寫在這，以後來這邊尻！
+取得 timestamp 與轉換123456789101112import timeimport datetime# 取得 timestampts = time.time()ts_str = datetime.strftime(&apos;%s&apos;)# 用 datet">
+  
+    <link rel="alternate" href="/atom.xml" title="CKPlus&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CKPlus&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ckplus.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-timezone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/20/python-timezone/" class="article-date">
+  <time datetime="2016-08-20T06:11:57.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 時間/時區處理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-時間-時區處理筆記"><a href="#Python-時間-時區處理筆記" class="headerlink" title="Python 時間/時區處理筆記"></a>Python 時間/時區處理筆記</h1><p>很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩<br>乾脆直接寫在這，以後來這邊尻！</p>
 <h4 id="取得-timestamp-與轉換"><a href="#取得-timestamp-與轉換" class="headerlink" title="取得 timestamp 與轉換"></a>取得 timestamp 與轉換</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="comment"># 取得 timestamp</span></div><div class="line">ts = time.time()</div><div class="line">ts_str = datetime.strftime(<span class="string">'%s'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 用 datetime 物件轉成 timestamp</span></div><div class="line">time.mktime(datetime.now().timetuple())</div><div class="line"></div><div class="line"><span class="comment"># 轉成 datetime 物件</span></div><div class="line">dt_obj = datetime.datetime.fromtimestamp(ts)</div></pre></td></tr></table></figure>
 <h4 id="用字串轉成-datetime-物件"><a href="#用字串轉成-datetime-物件" class="headerlink" title="用字串轉成 datetime 物件"></a>用字串轉成 datetime 物件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dt_obj = datetime.datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>,<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div></pre></td></tr></table></figure>
 <h4 id="datetime-object-變換-加減"><a href="#datetime-object-變換-加減" class="headerlink" title="datetime object 變換/加減"></a>datetime object 變換/加減</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta</div><div class="line"></div><div class="line">new_date = datetime.now().replace(days=<span class="number">1</span>, hours=<span class="number">2</span>, minutes=<span class="number">3</span>)</div><div class="line"></div><div class="line">offset_dt = datetime.now() + timedelta(days=<span class="number">2</span>, hours=<span class="number">5</span>, minutes=<span class="number">30</span>)</div><div class="line">offset_dt = datetime.now() - timedelta(days=<span class="number">0</span>, hours=<span class="number">5</span>, minutes=<span class="number">30</span>)</div></pre></td></tr></table></figure>
@@ -11,4 +101,137 @@
 <p>因為 time.mktime 會拿你本地系統時區去轉 timestamp，不是看 tzinfo。<br>而 calendar.timegm 不會自動幫你加時區。<br>所以做法就是要先把帶有 tzinfo 的 datetime 物件轉到 utc timezone，<br>再透過 calendar + datetime.utctimetuple() 把正確的 timestamp 轉出來！<br>這個雷踩過幾次，要特別小心。</p>
 <p>想把巴西當地時間的 2016-08-20 11:21:00 轉成 utc 的完整範例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> calendar</div><div class="line"><span class="keyword">import</span> pytz</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line">datetime_obj = datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line"></div><div class="line">br_tz = pytz.timezone(<span class="string">'America/Sao_Paulo'</span>)</div><div class="line">br_local_date = br_tz.localize(datetime_obj, is_dst=<span class="keyword">None</span>)</div><div class="line"></div><div class="line">br_utc = br_local_date.astimezone(pytz.timezone(<span class="string">'utc'</span>))</div><div class="line">calendar.timegm(br_utc.utctimetuple())</div><div class="line"><span class="comment"># 1471702860 = GMT: Sat, 20 Aug 2016 14:21:00 GMT</span></div></pre></td></tr></table></figure></p>
 <h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><a href="https://kkc.github.io/2015/07/08/dealing-with-datetime-and-timezone-in-python/" target="_blank" rel="external">卡西哥的文章</a></p>
-</div></article></div></section><footer><div class="paginator"><a href="/2016/08/02/custom-django-admin/" class="next">下一篇</a></div><div class="copyright"><p>© 2016 <a href="http://ckplus.github.io">Eric Yu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-81793217-1",'auto');ga('send','pageview');</script></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/08/20/python-timezone/" data-id="cis5kdqqc0005bcwg4du9sfm8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datetime/">datetime</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pytz/">pytz</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/02/custom-django-admin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">客製化 Django Admin Layout</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/elasticsearch/">elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/admin/">admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es/">es</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytz/">pytz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shard/">shard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/admin/" style="font-size: 10px;">admin</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/es/" style="font-size: 10px;">es</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/pytz/" style="font-size: 10px;">pytz</a> <a href="/tags/shard/" style="font-size: 10px;">shard</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/20/python-timezone/">Python 時間/時區處理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/02/custom-django-admin/">客製化 Django Admin Layout</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/18/ssh-tunnel/">SSH Tunnel 設定</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/04/es-shard/">ES Sharding 問題集</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/04/venv/">透過 Virtualenv 建立 Python 開發環境</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Eric Yu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

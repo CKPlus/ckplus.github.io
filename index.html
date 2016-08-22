@@ -1,1 +1,458 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> CKPlus's Blog</title><meta name="description" content="A Blog Powered By Hexo"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://ckplus.github.io/atom.xml" title="CKPlus's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link active">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/ckplus" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><ul class="home post-list"><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/08/20/python-timezone/" class="post-title-link">Python 時間/時區處理</a></h2><div class="post-info">Aug 20, 2016</div><div class="post-content"></div><a href="/2016/08/20/python-timezone/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/08/02/custom-django-admin/" class="post-title-link">客製化 Django Admin Layout</a></h2><div class="post-info">Aug 2, 2016</div><div class="post-content"></div><a href="/2016/08/02/custom-django-admin/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/07/18/ssh-tunnel/" class="post-title-link">SSH Tunnel 設定</a></h2><div class="post-info">Jul 18, 2016</div><div class="post-content"></div><a href="/2016/07/18/ssh-tunnel/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/07/04/es-shard/" class="post-title-link">ES Sharding 問題集</a></h2><div class="post-info">Jul 4, 2016</div><div class="post-content"></div><a href="/2016/07/04/es-shard/" class="read-more">...阅读全文</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2016/07/04/venv/" class="post-title-link">透過 Virtualenv 建立 Python 開發環境</a></h2><div class="post-info">Jul 4, 2016</div><div class="post-content"></div><a href="/2016/07/04/venv/" class="read-more">...阅读全文</a></article></li></ul></section><footer><div class="paginator"></div><div class="copyright"><p>© 2016 <a href="http://ckplus.github.io">Eric Yu</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-81793217-1",'auto');ga('send','pageview');</script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CKPlus&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="CKPlus's Blog">
+<meta property="og:url" content="http://ckplus.github.io/index.html">
+<meta property="og:site_name" content="CKPlus's Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CKPlus's Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="CKPlus&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CKPlus&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://ckplus.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-python-timezone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/20/python-timezone/" class="article-date">
+  <time datetime="2016-08-20T06:11:57.000Z" itemprop="datePublished">2016-08-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/20/python-timezone/">Python 時間/時區處理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-時間-時區處理筆記"><a href="#Python-時間-時區處理筆記" class="headerlink" title="Python 時間/時區處理筆記"></a>Python 時間/時區處理筆記</h1><p>很常用到的 function，可是三不五時都要去尻以前的 Code 來用有點麻煩<br>乾脆直接寫在這，以後來這邊尻！</p>
+<h4 id="取得-timestamp-與轉換"><a href="#取得-timestamp-與轉換" class="headerlink" title="取得 timestamp 與轉換"></a>取得 timestamp 與轉換</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line"><span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="comment"># 取得 timestamp</span></div><div class="line">ts = time.time()</div><div class="line">ts_str = datetime.strftime(<span class="string">'%s'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 用 datetime 物件轉成 timestamp</span></div><div class="line">time.mktime(datetime.now().timetuple())</div><div class="line"></div><div class="line"><span class="comment"># 轉成 datetime 物件</span></div><div class="line">dt_obj = datetime.datetime.fromtimestamp(ts)</div></pre></td></tr></table></figure>
+<h4 id="用字串轉成-datetime-物件"><a href="#用字串轉成-datetime-物件" class="headerlink" title="用字串轉成 datetime 物件"></a>用字串轉成 datetime 物件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dt_obj = datetime.datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>,<span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div></pre></td></tr></table></figure>
+<h4 id="datetime-object-變換-加減"><a href="#datetime-object-變換-加減" class="headerlink" title="datetime object 變換/加減"></a>datetime object 變換/加減</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta</div><div class="line"></div><div class="line">new_date = datetime.now().replace(days=<span class="number">1</span>, hours=<span class="number">2</span>, minutes=<span class="number">3</span>)</div><div class="line"></div><div class="line">offset_dt = datetime.now() + timedelta(days=<span class="number">2</span>, hours=<span class="number">5</span>, minutes=<span class="number">30</span>)</div><div class="line">offset_dt = datetime.now() - timedelta(days=<span class="number">0</span>, hours=<span class="number">5</span>, minutes=<span class="number">30</span>)</div></pre></td></tr></table></figure>
+<h4 id="用-pytz-做時區轉換"><a href="#用-pytz-做時區轉換" class="headerlink" title="用 pytz 做時區轉換"></a>用 pytz 做時區轉換</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pytz</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line">datetime_obj = datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line"></div><div class="line"><span class="comment"># 先將 naive datetime datetime_obj 掛上 tzinfo</span></div><div class="line"><span class="comment"># 並取得巴西聖保羅時間 2016-08-20 11:21:00 GMT-3</span></div><div class="line">br_tz = pytz.timezone(<span class="string">'America/Sao_Paulo'</span>)</div><div class="line">br_local_date = br_tz.localize(datetime_obj, is_dst=<span class="keyword">None</span>)</div><div class="line"></div><div class="line"><span class="comment"># datetime.datetime(2016, 8, 20, 11, 21, tzinfo=&lt;DstTzInfo 'America/Sao_Paulo' BRT-1 day, 21:00:00 STD&gt;)</span></div></pre></td></tr></table></figure>
+<p>要注意 python 的 datetime.timetuple 物件並沒有包含 timezone 資訊，<br>所以如果想把帶有 tzinfo 的 datetime 物件轉出 utc 會有一些問題。</p>
+<p>看看以下例子。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">br_local_date.timetuple()</div><div class="line"><span class="comment"># time.struct_time(tm_year=2016, tm_mon=8, tm_mday=20, tm_hour=11, tm_min=21, tm_sec=0, tm_wday=5, tm_yday=233, tm_isdst=0)</span></div><div class="line"></div><div class="line">br_local_date.utctimetuple()</div><div class="line"><span class="comment"># time.struct_time(tm_year=2016, tm_mon=8, tm_mday=20, tm_hour=14, tm_min=21, tm_sec=0, tm_wday=5, tm_yday=233, tm_isdst=0)</span></div><div class="line"><span class="comment"># 要使用 utctimetuple 才能知道這個 datetime 物件的 utc 時間</span></div></pre></td></tr></table></figure></p>
+<p>所以我們來做個實驗</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">test_date = datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line">time.mktime(test_date.timetuple())</div><div class="line"><span class="comment"># 1471663260</span></div><div class="line"></div><div class="line">time.mktime(br_local_date.timetuple())</div><div class="line"><span class="comment"># 1471663260</span></div></pre></td></tr></table></figure>
+<p>疑？兩個一樣捏，我不是已經把 br_local_date 掛上 tzinfo 了嗎？<br>我不是應該拿到台灣當地時間 2016-08-20 11:21:00 的 utc<br>跟巴西聖保羅當地時間 2016-08-20 11:21:00 的 utc 嗎？</p>
+<p>因為 time.mktime 會拿你本地系統時區去轉 timestamp，不是看 tzinfo。<br>而 calendar.timegm 不會自動幫你加時區。<br>所以做法就是要先把帶有 tzinfo 的 datetime 物件轉到 utc timezone，<br>再透過 calendar + datetime.utctimetuple() 把正確的 timestamp 轉出來！<br>這個雷踩過幾次，要特別小心。</p>
+<p>想把巴西當地時間的 2016-08-20 11:21:00 轉成 utc 的完整範例：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> calendar</div><div class="line"><span class="keyword">import</span> pytz</div><div class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</div><div class="line"></div><div class="line">datetime_obj = datetime.strptime(<span class="string">'2016-08-20 11:21:00'</span>, <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</div><div class="line"></div><div class="line">br_tz = pytz.timezone(<span class="string">'America/Sao_Paulo'</span>)</div><div class="line">br_local_date = br_tz.localize(datetime_obj, is_dst=<span class="keyword">None</span>)</div><div class="line"></div><div class="line">br_utc = br_local_date.astimezone(pytz.timezone(<span class="string">'utc'</span>))</div><div class="line">calendar.timegm(br_utc.utctimetuple())</div><div class="line"><span class="comment"># 1471702860 = GMT: Sat, 20 Aug 2016 14:21:00 GMT</span></div></pre></td></tr></table></figure></p>
+<h1 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h1><p><a href="https://kkc.github.io/2015/07/08/dealing-with-datetime-and-timezone-in-python/" target="_blank" rel="external">卡西哥的文章</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/08/20/python-timezone/" data-id="cis5kdqqc0005bcwg4du9sfm8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/datetime/">datetime</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pytz/">pytz</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-custom-django-admin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/02/custom-django-admin/" class="article-date">
+  <time datetime="2016-08-02T03:03:03.000Z" itemprop="datePublished">2016-08-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/02/custom-django-admin/">客製化 Django Admin Layout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近收到了一些 Request 要把之前用 Django Admin 搞的後台做一些 improve</p>
+<p>雖然用了 Django 一陣子可是覺得自己還是只懂皮毛而已，還有蠻多奇奇怪怪的功能都沒用過</p>
+<p>之前就聽說 Admin 的 layout 除了常見的那些欄位跟 filter 顯示，</p>
+<p>其他都可以客製化，可是改起來頗麻煩，剛好趁這次機會紀錄一下改法。</p>
+<p>其實官網文件都有寫，不過我還是先從思考方向先記錄起。</p>
+<h4 id="從何下手"><a href="#從何下手" class="headerlink" title="從何下手"></a>從何下手</h4><p>首先我從 source code 下手想看看 Admin 裡面到底是怎麼把各 page render 出來，</p>
+<p>到底哪些東西是可以調哪些不能調，個人覺得這招搭配看文件很有用。</p>
+<p>所以就直接殺到的 <code>django/contrib/admin/templates/</code></p>
+<p>哦！沒錯就是這邊!</p>
+<p>Admin 的各種 template 全都放在這，看來就是從這下手了！</p>
+<p>以我這次要改的部分叫做 <code>submit_line.html</code> 為例，</p>
+<p>我想透過參數去控制 submit row 在某些 model 下會出現新的客製 action。</p>
+<p>所以我就看到 <code>django/contrib/admin/templatetags/admin_modify.py</code></p>
+<p>發現裡面有一個 function 是來控制這件事，</p>
+<p>先附上 code:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@register.inclusion_tag('admin/submit_line.html', takes_context=True)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">submit_row</span><span class="params">(context)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    Displays the row of buttons for delete and save.</div><div class="line">    """</div><div class="line">    opts = context[<span class="string">'opts'</span>]</div><div class="line">    change = context[<span class="string">'change'</span>]</div><div class="line">    is_popup = context[<span class="string">'is_popup'</span>]</div><div class="line">    save_as = context[<span class="string">'save_as'</span>]</div><div class="line">    show_save = context.get(<span class="string">'show_save'</span>, <span class="keyword">True</span>)</div><div class="line">    show_save_and_continue = context.get(<span class="string">'show_save_and_continue'</span>, <span class="keyword">True</span>)</div><div class="line">    ctx = &#123;</div><div class="line">        <span class="string">'opts'</span>: opts,</div><div class="line">        <span class="string">'show_delete_link'</span>: (</div><div class="line">            <span class="keyword">not</span> is_popup <span class="keyword">and</span> context[<span class="string">'has_delete_permission'</span>] <span class="keyword">and</span></div><div class="line">            change <span class="keyword">and</span> context.get(<span class="string">'show_delete'</span>, <span class="keyword">True</span>)</div><div class="line">        ),</div><div class="line">        <span class="string">'show_save_as_new'</span>: <span class="keyword">not</span> is_popup <span class="keyword">and</span> change <span class="keyword">and</span> save_as,</div><div class="line">        <span class="string">'show_save_and_add_another'</span>: (</div><div class="line">            context[<span class="string">'has_add_permission'</span>] <span class="keyword">and</span> <span class="keyword">not</span> is_popup <span class="keyword">and</span></div><div class="line">            (<span class="keyword">not</span> save_as <span class="keyword">or</span> context[<span class="string">'add'</span>])</div><div class="line">        ),</div><div class="line">        <span class="string">'show_save_and_continue'</span>: <span class="keyword">not</span> is_popup <span class="keyword">and</span> context[<span class="string">'has_change_permission'</span>] <span class="keyword">and</span> show_save_and_continue,</div><div class="line">        <span class="string">'is_popup'</span>: is_popup,</div><div class="line">        <span class="string">'show_save'</span>: show_save,</div><div class="line">        <span class="string">'preserved_filters'</span>: context.get(<span class="string">'preserved_filters'</span>),</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> context.get(<span class="string">'original'</span>) <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">        ctx[<span class="string">'original'</span>] = context[<span class="string">'original'</span>]</div><div class="line">    <span class="keyword">return</span> ctx</div></pre></td></tr></table></figure></p>
+<p>看到這邊就得到我的結論：Submit row 的按鈕都可以透過 admin.py 的參數設定去做開關，但是只限於原本就有的那些 action，如果你要新增 action button 或是某些特殊邏輯才 show 的話還是要透過 overwrite 的方式去做才可以！</p>
+<h4 id="Overwrite-admin-template"><a href="#Overwrite-admin-template" class="headerlink" title="Overwrite admin template"></a>Overwrite admin template</h4><p>從剛剛的 source code 看到我要做兩件事，自訂 template 跟 自訂 tag</p>
+<h5 id="自訂-template"><a href="#自訂-template" class="headerlink" title="自訂 template"></a>自訂 template</h5><p>官網文件 <a href="https://docs.djangoproject.com/en/1.9/ref/contrib/admin/" target="_blank" rel="external">The Django admin site</a></p>
+<p>開一個資料夾 <code>MYAPP/templates/admin</code> 把要 overwrite 的 template 丟進去</p>
+<p><code>change_form.html</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;% extends &quot;admin/change_form.html&quot; %&#125;</div><div class="line"></div><div class="line">&#123;% load custom_submit_line %&#125;</div><div class="line"></div><div class="line">&#123;% block submit_buttons_bottom %&#125;&#123;% custom_submit_line %&#125;&#123;% endblock %&#125;</div></pre></td></tr></table></figure></p>
+<p>這邊可以發現我定義了一個 tag 叫做 <code>custom_submit_line</code></p>
+<p>並且把原本在 <code>admin/change_form.html</code> 內的 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% block submit_buttons_bottom %&#125;&#123;% submit_row %&#125;&#123;% endblock %&#125;</div></pre></td></tr></table></figure>
+<p><code>submit_row</code> overwrite 成 <code>custom_submit_line</code></p>
+<p><code>custom_submit_line.html</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;% load i18n admin_urls %&#125;</div><div class="line">&lt;div class=&quot;submit-row&quot;&gt;</div><div class="line">&#123;% if show_save %&#125;&lt;input type=&quot;submit&quot; value=&quot;&#123;% trans &apos;Save&apos; %&#125;&quot; class=&quot;default&quot; name=&quot;_save&quot; /&gt;&#123;% endif %&#125;</div><div class="line">&#123;% if show_delete_link %&#125;</div><div class="line">    &#123;% url opts|admin_urlname:&apos;delete&apos; original.pk|admin_urlquote as delete_url %&#125;</div><div class="line">    &lt;p class=&quot;deletelink-box&quot;&gt;&lt;a href=&quot;&#123;% add_preserved_filters delete_url %&#125;&quot; class=&quot;deletelink&quot;&gt;&#123;% trans &quot;Delete&quot; %&#125;&lt;/a&gt;&lt;/p&gt;</div><div class="line">&#123;% endif %&#125;</div><div class="line">&#123;% if show_save_as_new %&#125;&lt;input type=&quot;submit&quot; value=&quot;&#123;% trans &apos;Save as new&apos; %&#125;&quot; name=&quot;_saveasnew&quot; /&gt;&#123;% endif %&#125;</div><div class="line">&#123;% if show_save_and_add_another %&#125;&lt;input type=&quot;submit&quot; value=&quot;&#123;% trans &apos;Save and add another&apos; %&#125;&quot; name=&quot;_addanother&quot; /&gt;&#123;% endif %&#125;</div><div class="line">&#123;% if show_save_and_continue %&#125;&lt;input type=&quot;submit&quot; value=&quot;&#123;% trans &apos;Save and continue editing&apos; %&#125;&quot; name=&quot;_continue&quot; /&gt;&#123;% endif %&#125;</div><div class="line">&#123;% if show_something %&#125;&lt;input type=&quot;submit&quot; value=&quot;&#123;% trans &apos;Aloha!&apos; %&#125;&quot; name=&quot;_custom&quot; /&gt;&#123;% endif %&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>最後別忘了在 <code>settings.py</code> 內設定一下 TEMPLATES 的 DIR 參數</p>
+<p>不然會噴 not found 的錯誤！</p>
+<h5 id="自訂-tag"><a href="#自訂-tag" class="headerlink" title="自訂 tag"></a>自訂 tag</h5><p>官網文件 <a href="https://docs.djangoproject.com/en/1.9/howto/custom-template-tags/" target="_blank" rel="external">Custom template tags and filters</a></p>
+<p>開一個資料夾 <code>MYAPP/APP_NAME/templatetags</code> 把要 overwrite 的 tag 丟進去</p>
+<p><code>custom_submit_line.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line"><span class="keyword">from</span> django <span class="keyword">import</span> template</div><div class="line"></div><div class="line">CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))</div><div class="line"></div><div class="line">SUBMIT_LINE_HTML = os.path.normpath(</div><div class="line">    os.path.join(CURRENT_PATH, <span class="string">'../../templates/admin/custom_submit_line.html'</span>)</div><div class="line">)</div><div class="line"></div><div class="line">register = template.Library()</div><div class="line"></div><div class="line"></div><div class="line"><span class="meta">@register.inclusion_tag(SUBMIT_LINE_HTML, takes_context=True)</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">custom_submit_line</span><span class="params">(context)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    Displays the row of buttons for delete and save.</div><div class="line">    """</div><div class="line">    opts = context[<span class="string">'opts'</span>]</div><div class="line">    change = context[<span class="string">'change'</span>]</div><div class="line">    is_popup = context[<span class="string">'is_popup'</span>]</div><div class="line">    save_as = context[<span class="string">'save_as'</span>]</div><div class="line">    show_save = context.get(<span class="string">'show_save'</span>, <span class="keyword">True</span>)</div><div class="line">    show_save_and_continue = context.get(<span class="string">'show_save_and_continue'</span>, <span class="keyword">True</span>)</div><div class="line"></div><div class="line">    ctx = &#123;</div><div class="line">        <span class="string">'opts'</span>: opts,</div><div class="line">        <span class="string">'show_delete_link'</span>: (</div><div class="line">            <span class="keyword">not</span> is_popup <span class="keyword">and</span> context[<span class="string">'has_delete_permission'</span>] <span class="keyword">and</span></div><div class="line">            change <span class="keyword">and</span> context.get(<span class="string">'show_delete'</span>, <span class="keyword">True</span>)</div><div class="line">        ),</div><div class="line">        <span class="string">'show_save_as_new'</span>: <span class="keyword">not</span> is_popup <span class="keyword">and</span> change <span class="keyword">and</span> save_as,</div><div class="line">        <span class="string">'show_save_and_add_another'</span>: (</div><div class="line">            context[<span class="string">'has_add_permission'</span>] <span class="keyword">and</span> <span class="keyword">not</span> is_popup <span class="keyword">and</span></div><div class="line">            (<span class="keyword">not</span> save_as <span class="keyword">or</span> context[<span class="string">'add'</span>])</div><div class="line">        ),</div><div class="line">        <span class="string">'show_save_and_continue'</span>: <span class="keyword">not</span> is_popup <span class="keyword">and</span> context[<span class="string">'has_change_permission'</span>] <span class="keyword">and</span> show_save_and_continue,</div><div class="line">        <span class="string">'is_popup'</span>: is_popup,</div><div class="line">        <span class="string">'show_save'</span>: show_save,</div><div class="line">        <span class="string">'preserved_filters'</span>: context.get(<span class="string">'preserved_filters'</span>),</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> context.get(<span class="string">'original'</span>) <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</div><div class="line">        ctx[<span class="string">'original'</span>] = context[<span class="string">'original'</span>]</div><div class="line"></div><div class="line">    <span class="keyword">if</span> opts.model_name == <span class="string">'card'</span>:</div><div class="line">        ctx[<span class="string">'show_something'</span>] = <span class="keyword">True</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> ctx</div></pre></td></tr></table></figure>
+<p>跟原本的長很像我只有在最後做了一些邏輯，</p>
+<p>然後把 template 換成 <code>custom_submit_line.html</code> 如此而已！</p>
+<p>這樣就完成了客製化工作啦～</p>
+<h4 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h4><p>Trace 了 source code 之後發現幾乎每一個頁面都可以客製化，真心覺得 django admin 很方便，</p>
+<p>幫我處理掉了很多冗事，但是它裡面的邏輯很多都設計好了，要改的話要小心把預設的邏輯改爆。</p>
+<p>如果真的要改很大的話，也許自己寫會方便許多，按照專案需求決定會是比較好的選擇！</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><ol>
+<li><a href="https://github.com/yueyoum/myblogposts/blob/master/2013-01/Django%20Admin%E4%B8%AD%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%20%E4%BF%9D%E5%AD%98%E5%B9%B6%E7%BB%A7%E7%BB%AD%E7%BC%96%E8%BE%91%20%E4%B8%80.md#自定义change_form" target="_blank" rel="external">某個 Github Repo</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/08/02/custom-django-admin/" data-id="cis5kdqqo0007bcwgrpe8yusq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/admin/">admin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/django/">django</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ssh-tunnel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/18/ssh-tunnel/" class="article-date">
+  <time datetime="2016-07-18T08:41:02.000Z" itemprop="datePublished">2016-07-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/18/ssh-tunnel/">SSH Tunnel 設定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有的時候因為 MySQL, Redis 放在 VPC 內，</p>
+<p>會讓 local 開發變得很困難，還要自己裝這些 service，</p>
+<p>不然就是要在裡面開機器開發。</p>
+<p>不熟 Vim 的話就有頗痛苦！</p>
+<p>所以可以透過下面這招，用 ssh tunnel 來做 port forwarding</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -fNL 6379:&lt;redis_host&gt;:6379 &lt;username&gt;@tunnel.com</div></pre></td></tr></table></figure>
+<p>這就可以把 Redis default 的 6379 port 轉進來囉！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/07/18/ssh-tunnel/" data-id="cis5kdqpi0001bcwgfv4dfda8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-es-shard" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/04/es-shard/" class="article-date">
+  <time datetime="2016-07-04T06:26:02.000Z" itemprop="datePublished">2016-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/elasticsearch/">elasticsearch</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/04/es-shard/">ES Sharding 問題集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Disk-based-Shard-Allocation"><a href="#Disk-based-Shard-Allocation" class="headerlink" title="Disk-based Shard Allocation"></a>Disk-based Shard Allocation</h1><hr>
+<p>上週公司的 ES cluster 炸裂，才發現一個有趣的問題。</p>
+<p>一度以為是 index 過多所以才掛 shard 緩慢，但我想錯了！</p>
+<p>就是當 ES Cluster 在分 shard 的時候，要是 data node 的 disk space 不夠會無法繼續分，</p>
+<p>造成 shard 掛不回去。</p>
+<p>以下兩個參數是控制關鍵。</p>
+<p><code>cluster.routing.allocation.disk.watermark.low</code></p>
+<p>控制 disk space 的低標。預設 85%，要是超過 85%，則不會再把 shard 分到這個 node 上。</p>
+<p><code>cluster.routing.allocation.disk.watermark.high</code></p>
+<p>控制 disk space 的高標。預設 90%，要是超過 90%，es 會嘗試把 shard 掛到其他 node 上。</p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/disk-allocator.html" target="_blank" rel="external">ES 官網參考文件</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/07/04/es-shard/" data-id="cis5kdqoz0000bcwgywcla6h4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es/">es</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shard/">shard</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-venv" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/04/venv/" class="article-date">
+  <time datetime="2016-07-04T06:26:02.000Z" itemprop="datePublished">2016-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/04/venv/">透過 Virtualenv 建立 Python 開發環境</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在設定 Python 開發環境的時候，為了避免各專案之間的 module 互相干擾，把系統的 pip 裝了一堆不同版本的 libs，會利用 virtualenv 來打造獨立的專案運行環境。</p>
+<h1 id="Mac-的安裝方式"><a href="#Mac-的安裝方式" class="headerlink" title="Mac 的安裝方式"></a>Mac 的安裝方式</h1><ol>
+<li>透過 Brew 安裝 Python2</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>brew install python```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 透過 pip 安裝 virtualenv</div><div class="line"></div><div class="line">```$ pip install virtualenv</div></pre></td></tr></table></figure>
+<p>然後你就得到 virtualenv 了！</p>
+<ol>
+<li>初始化 Virtualenv (通常會在專案目錄內建立)</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>virtualenv venv ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 進入 venv 的環境</div><div class="line"></div><div class="line">```$ source venv/bin/activate</div></pre></td></tr></table></figure>
+<p>接下來我會習慣在每個 Python 專案內，把他的 pip-requirements.txt 寫好<br>比如說這樣</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">boto==2.13.0</div><div class="line">Django==1.9.1</div></pre></td></tr></table></figure>
+<p>就可以透過下面的指令把專案用到的套件裝起來，<br>這樣就不會干擾到系統內的 pip 啦！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install -r pip-requirements.txt</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://ckplus.github.io/2016/07/04/venv/" data-id="cis5kdqq80004bcwgh0nibonr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/elasticsearch/">elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/admin/">admin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datetime/">datetime</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticsearch/">elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es/">es</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytz/">pytz</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shard/">shard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/">virtualenv</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/admin/" style="font-size: 10px;">admin</a> <a href="/tags/datetime/" style="font-size: 10px;">datetime</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/elasticsearch/" style="font-size: 10px;">elasticsearch</a> <a href="/tags/es/" style="font-size: 10px;">es</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/pytz/" style="font-size: 10px;">pytz</a> <a href="/tags/shard/" style="font-size: 10px;">shard</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/virtualenv/" style="font-size: 10px;">virtualenv</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/20/python-timezone/">Python 時間/時區處理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/02/custom-django-admin/">客製化 Django Admin Layout</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/18/ssh-tunnel/">SSH Tunnel 設定</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/04/es-shard/">ES Sharding 問題集</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/04/venv/">透過 Virtualenv 建立 Python 開發環境</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Eric Yu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
